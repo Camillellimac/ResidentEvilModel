@@ -14,7 +14,6 @@ a {
 }
 
 .navlist a:hover {
-    background-color:rgba(228, 223, 223, 0.328);
     text-decoration: underline;
 }
 
@@ -38,16 +37,37 @@ header nav ul li {
     list-style: none;
 }
 
-.intro {
+.container {
     display: flex;
+    align-items: center;
+    align-content: center;
+    position: relative;
     width: 100%;
     height: 410px;
-    background-image:url(/assets/images/banner.jpg), url(/assets/images/Resident_Evil_4_Logo_Light_Outlined.png);
-    background-position: center, center;
-    background-size: cover, cover;
+    margin: 0;
 }
 
-/* les images ne se supperposent pas... a corriger */ 
+.img1, .img2 {
+    position: absolute;
+
+}
+
+.img1 {
+    z-index: 1;
+    width: 100%;
+    height: 410px;
+    
+}
+
+.img2 {
+    z-index: 2;
+    width: 45rem;
+    height: 205px;
+    margin: 4vh 14vw 0vh 14vw;
+    padding-bottom: 7rem;
+ 
+    
+}
 
 body {
     text-align: center;
@@ -77,6 +97,7 @@ body {
 .button1:hover {
     background-color:rgba(182, 28, 28, 0.472);
     color: black;
+    cursor: pointer;
 }
 
 .actualites {
@@ -131,11 +152,6 @@ p {
     margin-left: 2%;
 }
 
-footer {
-    color: white; 
-    font-family: Roboto;
-}
-
 .newsletter {
     width: 100%;
     height: 150px;
@@ -167,6 +183,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover{
     background-color:rgba(182, 28, 28, 0.472);
+    cursor: pointer;
 }
 
 footer {
@@ -175,15 +192,22 @@ footer {
     background-color: black;
     font-family: Roboto; 
     color: white;
+    
+    display: flex;
+    justify-content: center;
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer nav ul {
     display: flex;
-    position: relative;
-    justify-content: flex-end;
+    right: 0;
     align-items: center;
     align-content: center;
-    width: 90%;
     color: white;
 }
 
@@ -193,6 +217,7 @@ footer nav ul li {
     list-style: none;
     white-space: nowrap;
     margin-top: 1%;
+    font-size: 10px;
 }
 
 .navfooter a {
@@ -210,10 +235,67 @@ footer nav ul li {
     background-position: left;
     background-size: contain;
     background-repeat: no-repeat;
-    position: absolute;
     width: 120px;
     height: 40px;
-    margin-left: 5%;
-    margin-bottom: 0%;
     float:none;
+    position: absolute;
+    left: 2vw;
+    margin-top: 0.5vh;
+}
+
+@media screen and (max-width:600px) {
+    .img1 {
+        z-index: 1;
+        width: 600px;
+        height: 205px;
+        object-fit: contain;
+        
+    }
+    
+    .img2 {
+        z-index: 2;
+        width: 200px;
+        height: 50px;
+        padding-left: 50%;
+        transform: translateX(50% + 100px)
+}
+    .container {
+        width: 375px;
+        height: 100px;
+        }
+
+    header {
+        font-size: 12px;
+    }
+
+    .content p {
+        font-size: 12px;
+        text-align: justify;
+    }
+    
+    .button1 {
+        width: 5rem;
+        height: 25px;
+        background-color: rgb(182, 28, 28);
+        color: white;
+        border: none;
+        border-radius: 5%;
+        margin-top: 0%;
+        font-size: 10px;
+    }
+
+    .txt {
+        height: 350px;
+        width: 275px;
+        margin: 2%;
+        font-size: 12px;
+    }
+
+    p {
+        text-align: left;
+        margin-top: 6%;
+        margin-left: 4%;
+        font-size: 10px;
+    }
+
 }
